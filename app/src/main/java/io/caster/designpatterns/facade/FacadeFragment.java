@@ -26,5 +26,12 @@ public class FacadeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        CalculationFacade facade = new CalculationFacadeImpl(
+                new ClassA(),
+                new ClassB(),
+                new ClassC()
+        );
+
+        value.setText(Integer.toString(facade.getSum()));
     }
 }
